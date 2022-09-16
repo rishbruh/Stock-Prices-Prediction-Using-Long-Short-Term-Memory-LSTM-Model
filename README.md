@@ -1,4 +1,4 @@
-# Stock-Prices-Prediction-Using-Long-Short-Term-Memory-LSTM-Model
+# Stock Prices Prediction Using Long Short Term Memory LSTM-Model
 
 ## Preparing dataset and preprocessing:
 
