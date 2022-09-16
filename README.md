@@ -1,11 +1,11 @@
-#### Stock-Prices-Prediction-Using-Long-Short-Term-Memory-LSTM-Model
+# Stock-Prices-Prediction-Using-Long-Short-Term-Memory-LSTM-Model
 
-##Preparing dataset and preprocessing:
+## Preparing dataset and preprocessing:
 
 The stock dataset has 4 features which we use for prediction, namely :- Volume, Open, High, Low. We have to look 3 days into the past for training and 1 day into the future for prediction on our model. We assign the target feature of ‘Open’, as y_train_data (dependent variable) and the other 3 features (Volume, High, Low) make up our X_train_data (independent variables). Next to get all the features in the same range (0,1), we transformed all the features using Min-max scaler. This helps avoid large jumps in uneven data. Scaling dating helps counter the inherent volatility in the data, which is otherwise reflected in our calculations and visualizations. Also, ‘Date’ and ‘Close’ features were dropped out of the dataset.
 As for the test data set, we split out original data into training and testing data in a 70:30 ratio.
 
-##Design steps and result discussion:
+## Design steps and result discussion:
 
 For selecting the best performing network, several iterations of design were experimented with and we tried varying combinations of LSTM layers ranging from 8 to 128 units. Overfitting was one of the biggest challenges we kept facing and to address this issue we implemented different regularization techniques such as L1 and L2. L2 regularization worked out to give us the best results for our given data, we also had a dense layer with 1 unit at the end for a single regression output. This layer made use of ‘linear’ activation function and we used the Adam optimizer with our output loss function as mean absolute error. We found that a 2 layer LSTM network with the aforementioned settings, to give us the best fit on our data. We set a maximum of 300 epochs for our model to train but enabled it with a patience value of 10, meaning it stopped training in about 30 epochs. We also set a batch size of 32 while training. The model summary for our network is shown below –
 
